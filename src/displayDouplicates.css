@@ -1,0 +1,31 @@
+
+.loadcontainer {
+    width: 50%;
+    overflow: hidden;
+    margin: auto;
+    padding: 0.556rem;
+}
+
+.heading {
+    font-size: 15px;
+    flex-basis: 33.33%;
+    flex-shrink: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.secondaryHeading {
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.54);
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.card-text {
+    word-break: break-word;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
