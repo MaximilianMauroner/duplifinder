@@ -8,6 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './displayDouplicates.css'
 
 
+
 const DisplayDouplicatePW = ({data}) => {
     const [expanded, setExpanded] = React.useState(false);
 
