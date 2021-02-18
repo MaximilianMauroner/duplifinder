@@ -9,10 +9,11 @@ body {
     background-attachment: fixed;
 }
 
-.container {
+.inputcontainer {
     position: absolute;
-    top: 0;
+
     right: 0;
+    top: 0;
     bottom: 0;
     left: 0;
     -webkit-box-align: center;
@@ -42,7 +43,46 @@ body {
 
 }
 
+.accordioncontainer {
+    /*position: absolute;*/
+
+    right: 0;
+    bottom: 3.333rem;
+    left: 0;
+    padding-bottom: 3.333rem;
+
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+
+}
+
 .form {
+    align-content: center;
+    justify-content: center;
+    -webkit-justify-content: center;
     width: 22.222rem;
 }
 
@@ -154,4 +194,21 @@ body {
 
 .again-upload:hover:before {
     background: #7c2222;
+}
+
+.footer {
+    text-align: center;
+    /*background-color: rgba(255, 255, 255, 0.3) !important;*/
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 3.333rem;
+    width: 100%;
+}
+
+.footerdiv {
+    display: block;
+    padding: 20px;
+    height: 60px;
+    width: 100%;
 }

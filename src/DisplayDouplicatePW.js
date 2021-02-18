@@ -8,7 +8,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import './displayDouplicates.css'
 
 
-
 const DisplayDouplicatePW = ({data}) => {
     const [expanded, setExpanded] = React.useState(false);
 
@@ -24,13 +23,15 @@ const DisplayDouplicatePW = ({data}) => {
                 <Row>
                     <Col className={"card-text"}>
                         <Card.Title>
-                            <b>Name:</b> {data[i][j][4]}
+
+                            <b>Name: </b>{data[i][j][4]}
                         </Card.Title>
                         <Card.Subtitle>
                             <b>username: </b>{data[i][j][1]}
                         </Card.Subtitle>
                         <Card.Link>
-                            <b>URL: </b> {data[i][j][0]} <a target="_blank" href={data[i][j][0]}> click</a>
+
+                            <b>URL: </b>{data[i][j][0]} <a target="_blank" href={data[i][j][0]}> click</a>
                         </Card.Link>
                     </Col>
                 </Row>

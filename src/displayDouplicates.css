@@ -1,6 +1,7 @@
 
 .loadcontainer {
     width: 50%;
+    min-width: 350px;
     overflow: hidden;
     margin: auto;
     padding: 0.556rem;
@@ -8,7 +9,9 @@
 
 .heading {
     font-size: 15px;
+    display: flex !important;
     flex-basis: 33.33%;
+
     flex-shrink: 0;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
@@ -27,5 +30,19 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+.dropdown {
+    width: 2rem;
+    padding-left: 1rem !important;
+}
 
+.formControl {
+    min-width: 120px !important;
+    border: white !important;
+}
+
+.formControl::selection {
+    border-color: white !important;
+    background-color: white !important;
+
+}
 
