@@ -7,7 +7,8 @@
     padding: 0.556rem;
 }
 
-.heading {
+
+.headingcss {
     font-size: 15px;
     display: flex !important;
     flex-basis: 33.33%;
@@ -30,7 +31,7 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-.dropdown {
+.dropdowncss {
     width: 2rem;
     padding-left: 1rem !important;
 }
@@ -40,9 +41,19 @@ body {
     border: white !important;
 }
 
-.formControl::selection {
-    border-color: white !important;
-    background-color: white !important;
+.centering {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.backbutton {
 
 }
+
+.nextbutton {
+
+}
+
 

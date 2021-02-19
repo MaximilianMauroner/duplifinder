@@ -1,18 +1,18 @@
 import React from 'react';
 import {Row, Card, Col} from "react-bootstrap";
-import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import Typography from '@material-ui/core/Typography';
+import {Button, AccordionDetails, Accordion, AccordionSummary, Typography} from '@material-ui/core/';
+
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 import './displayDouplicates.css'
 
 
-const DisplayDouplicatePW = ({data}) => {
-    const [expanded, setExpanded] = React.useState(false);
+const DisplayDouplicatePW = ({data, resetData, next}) => {
+    const [expanded, setExpanded] = React.useState(false)
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
+
     };
     let ret = []
 
@@ -29,10 +29,12 @@ const DisplayDouplicatePW = ({data}) => {
                         <Card.Subtitle>
                             <b>username: </b>{data[i][j][1]}
                         </Card.Subtitle>
-                        <Card.Link>
-
-                            <b>URL: </b>{data[i][j][0]} <a target="_blank" href={data[i][j][0]}> click</a>
-                        </Card.Link>
+                        <b>URL: </b>
+                        <a target="_blank" href={data[i][j][0]}>
+                            <Card.Link>
+                                {data[i][j][0]}
+                            </Card.Link>
+                        </a>
                     </Col>
                 </Row>
             )
@@ -50,7 +52,7 @@ const DisplayDouplicatePW = ({data}) => {
                     aria-controls={"panel" + i + "bh-content"}
                     id={i}
                 >
-                    <Typography className={"heading"}>Same Passwords</Typography>
+                    <Typography className={"headingcss"}>Same Passwords</Typography>
                     <Typography className={"secondaryHeading"}>{data[i].length}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -62,9 +64,29 @@ const DisplayDouplicatePW = ({data}) => {
         )
     }
     return (
-        <div className={"loadcontainer"}>
-            {ret}
+        <div className={"justify-content-md-center"}>
+
+            <Row>
+                <Col>
+                    <div className={"centering"}>
+                        <Row>
+                            <Col md={1}>
+                                <Button className={""} onClick={resetData}>Back</Button>
+                            </Col>
+                            <Col md={{span: 1, offset: 10}}>
+                                <Button className={"centering"} onClick={next}>Next</Button>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className={"loadcontainer"}>
+                        {ret}
+                    </div>
+                </Col>
+            </Row>
+
+
         </div>
+
     );
 }
 

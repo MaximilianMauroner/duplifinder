@@ -1,0 +1,16 @@
+.footer {
+    text-align: center;
+    /*background-color: rgba(255, 255, 255, 0.3) !important;*/
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 3.333rem;
+    width: 100%;
+}
+
+.footerdiv {
+    display: block;
+    padding: 20px;
+    height: 60px;
+    width: 100%;
+}

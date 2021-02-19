@@ -1,19 +1,24 @@
 import React, {Component} from 'react'
-import CSVReader from 'react-csv-reader'
-import DisplayDouplicatePW from "./DisplayDouplicatePW";
-import {Select, FormControl, MenuItem, InputLabel, Button} from '@material-ui/core/';
 
-import './fileuploader.css'
+import DisplayDouplicatePW from "./components/DisplayDouplicatePW";
+import Ingestscreen from "./components/Ingestscreen";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {Select, FormControl, MenuItem, InputLabel, Button} from '@material-ui/core/';
+import {Col, Row} from 'react-bootstrap'
+
+import './App.css'
 
 
 class App extends Component {
     state = {
         doubles: [],
         loadedData: false,
-        file: "Select your file!(LastPass only)",
+        file: "Select your file!",
         dropdownItems: ['LastPass (csv)', 'Bitwarden (csv)', "1Password", "Chrome (csv)"],
         selectedItem: "LastPass (csv)",
-        items: []
+        items: [],
+        step: 0
     }
 
     componentDidMount() {
@@ -51,8 +56,10 @@ class App extends Component {
 
         this.setState({
             doubles: samePW,
-            loadedData: true
+            loadedData: true,
+            step: 1
         })
+        console.log("yes")
     }
 
     handleData = (data, fileInfo) => {
@@ -77,6 +84,7 @@ class App extends Component {
             return reformBitwarden(data)
         }
 
+
         function reformBitwarden(data) {
             let retdata = []
             for (let i = 0; i < data.length; i++) {
@@ -84,8 +92,8 @@ class App extends Component {
                 temp.push(data[i][6])
                 temp.push(data[i][7])
                 temp.push(data[i][8])
-                temp.push(data[i][3])
                 temp.push(data[i][2])
+                temp.push(data[i][3])
                 temp.push(data[i][1])
                 retdata.push(temp)
             }
@@ -98,86 +106,63 @@ class App extends Component {
         this.setState({
             doubles: [],
             loadedData: false,
+            step: 0,
             file: "Select your file!"
         })
     }
-    handleChange = (event) => {
-        this.setState({selectedItem: event.target.value})
+
+
+    back = () => {
+
+    }
+    foreward = () => {
+        this.setState({step: 2})
     }
 
-    setItems = () => {
-        let arr = [];
-        for (let i = 0; i < this.state.dropdownItems.length; i++) {
-            if (this.state.dropdownItems[i] === "1Password" || this.state.dropdownItems[i] === "Chrome (csv)") {
-                arr.push(
-                    <MenuItem disabled={true} value={this.state.dropdownItems[i]}>{this.state.dropdownItems[i]}</MenuItem>
-                )
-            } else {
-                arr.push(
-                    <MenuItem value={this.state.dropdownItems[i]}>{this.state.dropdownItems[i]}</MenuItem>
-                )
-            }
-
-        }
-        return arr
+    handleDropdown = (value) => {
+        this.setState({selectedItem: value})
     }
-
 
     render() {
-        if (this.state.loadedData) {
+        let footer = (
+            <div>
+                <footer className={"footer"}>
+                    <a target={"_blank"} href={"https://github.com/MaximilianMauroner/duplifinder"}>Git Hub</a>
+                </footer>
+            </div>
+        )
+        if (this.state.step === 0) {
             return (
                 <div>
-                    <div className={"justify-content-md-center w-100"}>
-                        <div>
-                            <Button className={"again-upload"} onClick={this.resetData}/>
-                        </div>
-                        <div className="accordioncontainer w-100">
-                            <div className={"justify-content-center w-100"}>
-                                <DisplayDouplicatePW data={this.state.doubles}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <footer className={"footer"}>
-                            <a target={"_blank"} href={"https://github.com/MaximilianMauroner/duplifinder"}>Git Hub</a>
-                        </footer>
-                    </div>
+                    <Ingestscreen handleDropdown={this.handleDropdown} handleData={this.handleData}/>
+                    {footer}
                 </div>
-
+            )
+        }
+        if (this.state.step === 1) {
+            return (
+                <div>
+                    <div>
+                        <Button className={"again-upload"} onClick={this.resetData}/>
+                    </div>
+                    <DisplayDouplicatePW resetData={this.resetData} next={this.foreward} data={this.state.doubles}/>
+                    {footer}
+                </div>
+            )
+        }
+        if (this.state.step === 2) {
+            return (
+                <div>
+                    <div>
+                        <Button className={"again-upload"} onClick={this.resetData}/>
+                    </div>
+                    {footer}
+                </div>
             )
         }
 
-        return (
-            <div>
-                <div className="inputcontainer">
-                    <form className="form">
-                        <div className={"file-upload-wrapper"} data-text={this.state.file}>
-                            <CSVReader onFileLoaded={(data, fileInfo) => this.handleData(data, fileInfo)}/>
-                        </div>
-                    </form>
-                    <div className={"dropdown"}>
-                        <FormControl variant="outlined" className={"formControl"}>
-                            <InputLabel id="pwdropdown">Password Manager</InputLabel>
-                            <Select
-                                labelId="pwdropdown"
-                                id="pwselectdropdown"
-                                label="LastPass (csv)"
-                                value={this.state.selectedItem}
-                                onChange={this.handleChange}
-                            >
-                                {this.setItems()}
-                            </Select>
-                        </FormControl>
-                    </div>
-                </div>
-                <div>
-                    <footer className={"footer"}>
-                        <a target={"_blank"} href={"https://github.com/MaximilianMauroner/duplifinder"}>Git Hub</a>
-                    </footer>
-                </div>
-            </div>
-        )
     }
+
 }
 
 export default App;
