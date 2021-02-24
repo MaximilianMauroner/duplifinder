@@ -24,7 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+*[Link to Site](https://duplifinder.mauroner.eu/)
 
 Since LastPass and many others made hid the feature, to see if you use the same password multiple times, to behind a paywall, so I decided to make the feature mysel
 
@@ -56,9 +56,9 @@ Install Node.js, Clone the repository, Install NPM packages, Start
 3. Start
   ``` run npm start ```
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE EXAMPLES
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://example.com)_  -->
