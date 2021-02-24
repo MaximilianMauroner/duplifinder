@@ -33,7 +33,7 @@ Since LastPass and many others made hid the feature, to see if you use the same 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Bootstrap](https://getbootstrap.com)
 * [React](https://react-bootstrap.github.io/)
-* [Material UI] (material-ui.com)
+* [Material UI](material-ui.com)
 
 
 
@@ -46,20 +46,17 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Install Node.js
+```https://nodejs.org/en/download/ ```
+
 
 ### Installation
 
 1. Clone the repo
    ```sh git clone https://github.com/MaximilianMauroner/duplifinder.git ```
-2. Install Node.js
-3. ```https://nodejs.org/en/download/ ```
-4. Install NPM packages
+2. Install NPM packages
    ```sh npm install ```
-5. Change into the Current Directory and then start
+3. Change into the Current Directory and then start
   ``` run npm start ```
 
 <!-- USAGE EXAMPLES -->
