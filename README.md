@@ -39,12 +39,10 @@ Since LastPass and many others made hid the feature, to see if you use the same 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Install Node.js, Clone the repository, Install NPM packages, Start
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * Install Node.js
 ```https://nodejs.org/en/download/ ```
 
@@ -55,7 +53,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh git clone https://github.com/MaximilianMauroner/duplifinder.git ```
 2. Install NPM packages
    ```sh npm install ```
-3. Change into the Current Directory and then start
+3. Start
   ``` run npm start ```
 
 <!-- USAGE EXAMPLES -->
