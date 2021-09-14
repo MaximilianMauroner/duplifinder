@@ -26,7 +26,7 @@
 
 [Link to Site](https://duplifinder.mauroner.eu/)
 
-Since LastPass and many others made hid the feature, to see if you use the same password multiple times, to behind a paywall, so I decided to make the feature myself
+Since LastPass and many others decided to hide the feature where you see if you use the same password multiple times behind a paywall, I decided to make the feature myself
 
 ### Built With
 
